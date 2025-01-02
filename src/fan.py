@@ -98,39 +98,51 @@ class FanDevice:
 
     def _learnCommand(self, commandType: str):
         """Learn a command from the remote"""
-        print(f"\nLearning {commandType.upper()} command")
-        print("Press 'S' to skip this command, or press the button on your remote...")
+        self.logger.debug(f'Learning {commandType.upper()} command')
+
+        print('\nPoint remote at device and press button')
 
         # Get the current frequency if it was set during device initialization
         frequency = None
         if hasattr(self.device, 'frequency'):
             frequency = self.device.frequency
+            self.logger.debug(f'Using frequency: {frequency} MHz')
 
         command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
-
         if command is None:
-            print("Learning failed or timed out. Try again? (Y/n/s)")
+            self.logger.warning('Learning failed or timed out')
+            print("\nLearning failed or timed out. Try again? (Y/n)")
             choice = input().lower()
-            if choice == 's':
-                print(f"Skipping {commandType.upper()} command")
-                return 'skip'
             if choice != 'n':
                 return self._learnCommand(commandType)
-            return None
+            return False
 
-        print(f'Command received successfully')
-        self.outputConfig['commands'][commandType] = command
-        return True
+        self.logger.debug(f'Received command: {command}')
+        print('\nCommand received.')
+        
+        # Only show command code in verbose mode (INFO level)
+        if logging.getLogger().level <= logging.INFO:
+            print(f'Command code: {command}')
+            
+        print('Press Enter to confirm, N to re-learn, or S to skip this command')
+        choice = input().lower()
+
+        if choice == 's':
+            self.logger.debug(f'Skipping {commandType} command')
+            return True
+        elif choice == 'n':
+            return self._learnCommand(commandType)
+        else:
+            self.outputConfig['commands'][commandType] = command
+            self.logger.debug(f'Saved command {commandType}')
+            print('Command saved successfully')
+            return True
 
     def learn(self, is_rf: bool = False):
         """Learn all commands for the fan"""
         self.is_rf = is_rf
-        print('\nStarting Fan Command Learning')
-        print('You will be prompted to press buttons on your remote.')
-        print('For each command you can:')
-        print('- Press the button on your remote to learn it')
-        print('- Enter S to skip learning that command')
-        print('- Enter N to retry if the learning failed\n')
+        self.logger.debug('Starting fan command learning process')
+        print('\nYou will now be prompted to press buttons on your remote control.\n')
 
         # Calculate total commands
         total_commands = 3 + len(self.fanModes) + len(self.timerModes)  # OFF + ON + REVERSE + speeds + timers
@@ -149,7 +161,7 @@ class FanDevice:
             if result == 'skip':
                 self.logger.info(f'Skipped {command_name} command')
             elif result:
-                self.logger.info(f'Successfully learned {command_name} command')
+                self.logger.debug(f'Successfully learned {command_name} command')
             command_count += 1
         
         # Learn speed commands
@@ -159,7 +171,7 @@ class FanDevice:
             if result == 'skip':
                 self.logger.info(f'Skipped {fanMode} command')
             elif result:
-                self.logger.info(f'Successfully learned {fanMode} command')
+                self.logger.debug(f'Successfully learned {fanMode} command')
             command_count += 1
             
         # Learn timer commands
@@ -172,9 +184,9 @@ class FanDevice:
             if result == 'skip':
                 self.logger.info(f'Skipped {timer_name} command')
             elif result:
-                self.logger.info(f'Successfully learned {timer_name} command')
+                self.logger.debug(f'Successfully learned {timer_name} command')
             command_count += 1
 
-        print('\n=== Completed Fan Command Learning ===')
-        self.logger.debug(json.dumps(self.outputConfig, indent=4))
+        self.logger.debug('Successfully completed fan command learning')
+        self.logger.debug(f'Final config: {json.dumps(self.outputConfig, indent=2)}')
         return self.outputConfig

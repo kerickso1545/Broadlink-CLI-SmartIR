@@ -1,16 +1,31 @@
-import broadlink
-import json
-import time
-import logging
 import argparse
-from typing import List
+import os
+import json
+import logging
+import broadlink
+import questionary
+from typing import List, Optional
+from helpers import DeviceType
 from climate import ClimateDevice
 from fan import FanDevice
 from media import MediaDevice
 from light import LightDevice
-from helpers import DeviceType, LogLevel
-import questionary
-import os
+import time
+
+def setupLogging(args):
+    """Configure logging based on command line arguments"""
+    if args.debug:
+        log_level = logging.DEBUG
+    elif args.verbose:
+        log_level = logging.INFO
+    else:
+        log_level = logging.WARNING
+
+    logging.basicConfig(
+        level=log_level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    return logging.getLogger(__name__)
 
 
 def getLogger(log_level):
@@ -47,8 +62,8 @@ def getLogger(log_level):
 def scanDevices(frequency=None, device_type=None, host=None, mac=None):
     logger = logging.getLogger(__name__)
     devices = []
-    logger.info('=== Starting device scan ===')
-    logger.info(f'Manual device type specified: {hex(device_type) if device_type else None}')
+    logger.debug('=== Starting device scan ===')
+    logger.debug(f'Manual device type specified: {hex(device_type) if device_type else None}')
     
     if device_type and host and mac:
         logger.debug(f'Using direct device connection - type: {device_type}, host: {host}, mac: {mac}')
@@ -57,12 +72,17 @@ def scanDevices(frequency=None, device_type=None, host=None, mac=None):
             device = broadlink.gendevice(device_type, (host, broadlink.DEFAULT_PORT), mac)
             device.auth()
             devices = [device]
-            logger.info(f'Connected to device:')
-            logger.info(f'  - Type: {type(device).__name__}')
-            logger.info(f'  - Model: {device.model}')
-            logger.info(f'  - Device Type (hex): 0x{device.devtype:x}')
-            logger.info(f'  - Host: {device.host[0]}')
-            logger.info(f'  - MAC: {device.mac.hex()}')
+            if logger.getEffectiveLevel() <= logging.INFO:  # Show in verbose mode
+                print('\nFound device:')
+                print(f'  MAC Address : {":".join(format(x, "02x") for x in device.mac)}')
+                print(f'  IP Address  : {device.host[0]}')
+                print(f'  Device Type : 0x{device.devtype:x}')
+            logger.debug(f'Connected to device:')
+            logger.debug(f'  - Type: {type(device).__name__}')
+            logger.debug(f'  - Model: {device.model}')
+            logger.debug(f'  - Device Type (hex): 0x{device.devtype:x}')
+            logger.debug(f'  - Host: {device.host[0]}')
+            logger.debug(f'  - MAC: {device.mac.hex()}')
         except Exception as e:
             logger.error(f'Failed to connect to device: {str(e)}')
             print(f'Failed to connect to device: {str(e)}')
@@ -70,13 +90,18 @@ def scanDevices(frequency=None, device_type=None, host=None, mac=None):
     else:
         print('Scanning for devices...\n')
         for device in broadlink.xdiscover():
-            logger.info(f'Found device via auto-discovery:')
-            logger.info(f'  - Type: {type(device).__name__}')
-            logger.info(f'  - Model: {device.model}')
-            logger.info(f'  - Device Type (hex): 0x{device.devtype:x}')
-            logger.info(f'  - Host: {device.host[0]}')
-            logger.info(f'  - MAC: {device.mac.hex()}')
-            logger.info(f'  - Available methods: {[method for method in dir(device) if not method.startswith("_")]}')
+            if logger.getEffectiveLevel() <= logging.INFO:  # Show in verbose mode
+                print('\nFound device:')
+                print(f'  MAC Address : {":".join(format(x, "02x") for x in device.mac)}')
+                print(f'  IP Address  : {device.host[0]}')
+                print(f'  Device Type : 0x{device.devtype:x}')
+            logger.debug(f'Found device via auto-discovery:')
+            logger.debug(f'  - Type: {type(device).__name__}')
+            logger.debug(f'  - Model: {device.model}')
+            logger.debug(f'  - Device Type (hex): 0x{device.devtype:x}')
+            logger.debug(f'  - Host: {device.host[0]}')
+            logger.debug(f'  - MAC: {device.mac.hex()}')
+            logger.debug(f'  - Available methods: {[method for method in dir(device) if not method.startswith("_")]}')
             devices.append(device)
 
     if len(devices) == 0:
@@ -106,6 +131,8 @@ def showAndSelectDevice(devices: List[broadlink.Device]) -> broadlink.Device:
         exit()
 
     # No need to re-auth since we already authenticated in scanDevices
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Selected device: {device.model}')
     return device
 
 
@@ -114,6 +141,8 @@ def selectDeviceType() -> DeviceType:
         'Select Device Type',
         choices=[deviceType.name for deviceType in DeviceType]
     ).ask()
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Selected device type: {selectedDeviceType}')
     return selectedDeviceType
 
 
@@ -122,11 +151,15 @@ def selectSignalType() -> bool:
         'Select Signal Type',
         choices=['RF', 'IR']
     ).ask()
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Selected signal type: {signalType}')
     return signalType == 'RF'
 
 
 def promptManufacturer():
     manufacturer = questionary.text('Enter Manufacturer').ask()
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Entered manufacturer: {manufacturer}')
     return manufacturer
 
 
@@ -137,6 +170,8 @@ def promptSupportedModels():
     else:
         supportedModels = [supportedModels]
 
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Entered supported models: {supportedModels}')
     return supportedModels
 
 
@@ -145,37 +180,35 @@ def promptFrequency():
         'Enter RF frequency in MHz (optional, leave empty for default)',
         validate=lambda text: True if text == '' or (text.replace('.', '', 1).isdigit() and len(text.split('.')[1]) <= 2 if '.' in text else True) else 'Please enter a valid number with at most 2 decimal places'
     ).ask()
+    logger = logging.getLogger(__name__)
+    logger.debug(f'Entered frequency: {frequency}')
     return frequency
 
 
-def saveConfig(config: dict, deviceType: str):
+def saveConfig(config: dict, deviceType: str, manufacturer: str):
+    """Save the config to a JSON file"""
     # Create the out folder if it doesn't exist
     if not os.path.exists('./out'):
         os.makedirs('./out')
-
-    manufacturer = config['manufacturer']
-    fileName = f'./out/{deviceType}-{manufacturer}-{time.time()}.json'
+    
+    # Save the config with timestamp
+    fileName = f'./out/{deviceType}-{manufacturer}-{int(time.time())}.json'
     with open(fileName, 'w') as f:
         json.dump(config, f, indent=4)
+    print(f'\nSuccessfully created {fileName}')
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--log-level', choices=['error', 'warning', 'info', 'debug'], default='info',
-                      help='Logging level (default: info)')
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description="Broadlink CLI Tool")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Enable verbose output")
+    parser.add_argument("--debug", action="store_true", help="Enable debug output")
     args = parser.parse_args()
 
-    # Convert string log level to our LogLevel enum
-    log_level_map = {
-        'error': LogLevel.ERROR,
-        'warning': LogLevel.WARNING,
-        'info': LogLevel.INFO,
-        'debug': LogLevel.DEBUG
-    }
-    log_level = log_level_map[args.log_level.lower()]
-    
-    logger = getLogger(log_level)
-    
+    # Setup logging
+    logger = setupLogging(args)
+    logger.debug("Starting Broadlink CLI Tool")
+
     # Add device specification options
     device_type = questionary.text(
         'Enter device type in hex (e.g., 0x649b) or leave empty for auto-discovery',
@@ -189,20 +222,25 @@ def main():
     mac = questionary.text(
         'Enter device MAC address without colons (leave empty for auto-discovery)'
     ).ask()
-    
+
     # First just scan for devices without setting frequency
     devices = scanDevices(
         None,  # Don't set frequency yet
-        device_type if device_type else None,
+        int(device_type, 16) if device_type else None,
         host if host else None,
         mac if mac else None
     )
-    
-    # Select the device
-    device = showAndSelectDevice(devices)
-    
+
+    # Select the device if multiple found
+    device = None
+    if len(devices) > 1:
+        device = showAndSelectDevice(devices)
+    else:
+        device = devices[0]
+
     # Select signal type (RF or IR)
     is_rf = selectSignalType()
+    logger.debug(f"Selected {'RF' if is_rf else 'IR'} signal type")
 
     # Get frequency if RF
     freq = None
@@ -211,14 +249,19 @@ def main():
         if freq:
             freq_float = float(freq)
             device.frequency = freq_float
-            logger.info(f'Stored frequency {freq_float} MHz on selected device')
+            logger.debug(f'Set frequency to {freq_float} MHz')
     
     # Select device type
     deviceType = selectDeviceType()
+    logger.debug(f"Selected device type: {deviceType}")
+    
     manufacturer = promptManufacturer()
     supportedModels = promptSupportedModels()
 
     # Call the appropriate device class to learn
+    logger.debug(f"Initializing {deviceType} device handler")
+    outputConfig = None
+    
     if deviceType == DeviceType.CLIMATE.name:
         climate = ClimateDevice(device, manufacturer, supportedModels, logger)
         outputConfig = climate.learn(is_rf)
@@ -236,8 +279,7 @@ def main():
         outputConfig = light.learn(is_rf)
 
     if outputConfig:
-        saveConfig(outputConfig, deviceType)
-        logger.info('Finished - Config saved to ./out directory\n')
+        saveConfig(outputConfig, deviceType, manufacturer)
     else:
         logger.error("Failed to learn commands")
 

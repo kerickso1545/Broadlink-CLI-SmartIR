@@ -54,25 +54,47 @@ class MediaDevice:
 
         return outputConfig
 
-    def _learnCommand(self, command_type: str):
+    def _learnCommand(self, commandType: str):
         """Learn a command from the remote"""
-        print(f'\nLearning {command_type.upper()} - Point remote at device and press button')
+        self.logger.debug(f'Learning {commandType.upper()} command')
+
+        print('\nPoint remote at device and press button')
 
         # Get the current frequency if it was set during device initialization
         frequency = None
         if hasattr(self.device, 'frequency'):
             frequency = self.device.frequency
+            self.logger.debug(f'Using frequency: {frequency} MHz')
 
         command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
         if command is None:
+            self.logger.warning('Learning failed or timed out')
+            print("\nLearning failed or timed out. Try again? (Y/n)")
+            choice = input().lower()
+            if choice != 'n':
+                return self._learnCommand(commandType)
             return False
 
-        choice = input(f'Press Enter or Y to confirm or N to relearn - {command}\n')
+        self.logger.debug(f'Received command: {command}')
+        print('\nCommand received.')
+        
+        # Only show command code in verbose mode (INFO level)
+        if logging.getLogger().level <= logging.INFO:
+            print(f'Command code: {command}')
+            
+        print('Press Enter to confirm, N to re-learn, or S to skip this command')
+        choice = input().lower()
 
-        if choice.lower() == 'y' or choice == '':
-            return self._writeCommandToConfig(command, command_type)
+        if choice == 's':
+            self.logger.debug(f'Skipping {commandType} command')
+            return True
+        elif choice == 'n':
+            return self._learnCommand(commandType)
         else:
-            return self._learnCommand(command_type)
+            self.outputConfig['commands'][commandType] = command
+            self.logger.debug(f'Saved command {commandType}')
+            print('Command saved successfully')
+            return True
 
     def _writeCommandToConfig(self, command: str, key: str, nestedKey: str = None):
         if key and nestedKey:
@@ -83,13 +105,23 @@ class MediaDevice:
     def learn(self, is_rf: bool = False):
         """Learn all commands for the media device"""
         self.is_rf = is_rf
+        self.logger.debug('Starting media command learning process')
+        print('\nYou will now be prompted to press buttons on your remote control.\n')
+
         # Learn the media commands
         for command in MediaCommands:
-            self._learnCommand(command.value)
+            if not self._learnCommand(command.value):
+                self.logger.error(f'Failed to learn {command.value} command')
+                return None
+            self.logger.debug(f'Successfully learned {command.value} command')
 
         # Learn the sources
         for source in self.sources:
-            self._learnCommand('sources')
-            self.logger.debug(json.dumps(self.outputConfig, indent=4))
+            if not self._learnCommand('sources'):
+                self.logger.error(f'Failed to learn {source} command')
+                return None
+            self.logger.debug(f'Successfully learned {source} command')
 
+        self.logger.debug('Successfully completed media command learning')
+        self.logger.debug(f'Final config: {json.dumps(self.outputConfig, indent=2)}')
         return self.outputConfig

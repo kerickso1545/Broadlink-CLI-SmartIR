@@ -99,47 +99,112 @@ class ClimateDevice:
 
     def _learnCommand(self, operationMode: str, fanMode: str, temp: int):
         """Learn a command from the remote"""
-        print(f'\nLearning {operationMode.upper()} mode, {fanMode.upper()} fan, {temp}° temp')
-        print('Point remote at device and press button')
+        self.logger.debug(f'Learning {operationMode.upper()} mode, {fanMode.upper()} fan, {temp}° temp')
+
+        print('\nPoint remote at device and press button')
 
         # Get the current frequency if it was set during device initialization
         frequency = None
         if hasattr(self.device, 'frequency'):
             frequency = self.device.frequency
+            self.logger.debug(f'Using frequency: {frequency} MHz')
 
         command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
         if command is None:
+            self.logger.warning('Learning failed or timed out')
+            print("\nLearning failed or timed out. Try again? (Y/n)")
+            choice = input().lower()
+            if choice != 'n':
+                return self._learnCommand(operationMode, fanMode, temp)
             return False
 
-        choice = input(f'Press Enter or Y to confirm or N to relearn - {command}\n')
+        self.logger.debug(f'Received command: {command}')
+        print('\nCommand received.')
+        
+        # Only show command code in verbose mode (INFO level)
+        if logging.getLogger().level <= logging.INFO:
+            print(f'Command code: {command}')
+            
+        print('Press Enter to confirm, N to re-learn, or S to skip this command')
+        choice = input().lower()
 
-        if choice.lower() == 'y' or choice == '':
-            return self._writeCommandToConfig(command, operationMode, fanMode, temp)
-        else:
+        if choice == 's':
+            self.logger.debug(f'Skipping {operationMode} command')
+            return True
+        elif choice == 'n':
             return self._learnCommand(operationMode, fanMode, temp)
-
-    def _writeCommandToConfig(self, command: str, operationMode: str, fanMode: str, temp: int):
-        if operationMode and fanMode and temp:
+        else:
             self.outputConfig['commands'][operationMode][fanMode][str(temp)] = command
-        elif operationMode and fanMode:
-            self.outputConfig['commands'][operationMode][fanMode] = command
-        elif operationMode:
-            self.outputConfig['commands'][operationMode] = command
+            self.logger.debug(f'Saved command {operationMode}')
+            print('Command saved successfully')
+            return True
+
+    def _learnOffCommand(self):
+        """Learn the OFF command from the remote"""
+        self.logger.debug(f'Learning OFF command')
+
+        print('\nPoint remote at device and press button')
+
+        # Get the current frequency if it was set during device initialization
+        frequency = None
+        if hasattr(self.device, 'frequency'):
+            frequency = self.device.frequency
+            self.logger.debug(f'Using frequency: {frequency} MHz')
+
+        command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
+        if command is None:
+            self.logger.warning('Learning failed or timed out')
+            print("\nLearning failed or timed out. Try again? (Y/n)")
+            choice = input().lower()
+            if choice != 'n':
+                return self._learnOffCommand()
+            return False
+
+        self.logger.debug(f'Received command: {command}')
+        print('\nCommand received.')
+        
+        # Only show command code in verbose mode (INFO level)
+        if logging.getLogger().level <= logging.INFO:
+            print(f'Command code: {command}')
+            
+        print('Press Enter to confirm, N to re-learn, or S to skip this command')
+        choice = input().lower()
+
+        if choice == 's':
+            self.logger.debug(f'Skipping OFF command')
+            return True
+        elif choice == 'n':
+            return self._learnOffCommand()
+        else:
+            self.outputConfig['commands']['off'] = command
+            self.logger.debug(f'Saved command OFF')
+            print('Command saved successfully')
+            return True
 
     def learn(self, is_rf: bool = False):
         """Learn all commands for the climate device"""
         self.is_rf = is_rf
-        print('\nYou will now be prompted to press the corresponding button on the remote for each command\n')
+        self.logger.debug('Starting climate command learning process')
+        print('\nYou will now be prompted to press buttons on your remote control.\n')
 
         # Learn the OFF Command
-        self._learnCommand(ClimateOperationModes.OFF.name.lower(), None, None)
-        self.logger.debug(json.dumps(self.outputConfig, indent=4))
+        if not self._learnOffCommand():
+            self.logger.error('Failed to learn OFF command')
+            return None
+        self.logger.debug('Successfully learned OFF command')
 
         # Learn each temperature at each fanMode and operationMode
-        for operationMode in self.operationModes:
-            for fanMode in self.fanModes:
-                for temp in self.temps:
-                    self._learnCommand(operationMode, fanMode, temp)
-                    self.logger.debug(json.dumps(self.outputConfig, indent=4))
+        for operationMode in ClimateOperationModes:
+            if operationMode == ClimateOperationModes.OFF:
+                continue
 
+            for fanMode in ClimateFanModes:
+                for temp in self.temps:
+                    if not self._learnCommand(operationMode.value.lower(), fanMode.value.lower(), temp):
+                        self.logger.error(f'Failed to learn {operationMode.value} mode, {fanMode.value} fan, {temp}° temp')
+                        return None
+                    self.logger.debug(f'Successfully learned {operationMode.value} mode, {fanMode.value} fan, {temp}° temp')
+
+        self.logger.debug('Successfully completed climate command learning')
+        self.logger.debug(f'Final config: {json.dumps(self.outputConfig, indent=2)}')
         return self.outputConfig
