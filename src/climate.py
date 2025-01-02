@@ -1,4 +1,3 @@
-
 from enum import Enum
 import json
 import broadlink
@@ -99,16 +98,20 @@ class ClimateDevice:
         return outputConfig
 
     def _learnCommand(self, operationMode: str, fanMode: str, temp: int):
-        if (operationMode and fanMode and temp):
-            print(f'Learning {operationMode.upper()} {fanMode.upper()} {str(temp).upper()}°')
-        elif (operationMode and fanMode):
-            print(f'Learning {operationMode.upper()} {fanMode.upper()}')
-        elif (operationMode):
-            print(f'Learning {operationMode.upper()}')
+        """Learn a command from the remote"""
+        print(f'\nLearning {operationMode.upper()} mode, {fanMode.upper()} fan, {temp}° temp')
+        print('Point remote at device and press button')
 
-        command = async_learn(self.device)
+        # Get the current frequency if it was set during device initialization
+        frequency = None
+        if hasattr(self.device, 'frequency'):
+            frequency = self.device.frequency
 
-        choice = input(f'Press Enter or Y to confirm or N to Relearn - {command}\n')
+        command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
+        if command is None:
+            return False
+
+        choice = input(f'Press Enter or Y to confirm or N to relearn - {command}\n')
 
         if choice.lower() == 'y' or choice == '':
             return self._writeCommandToConfig(command, operationMode, fanMode, temp)
@@ -123,7 +126,9 @@ class ClimateDevice:
         elif operationMode:
             self.outputConfig['commands'][operationMode] = command
 
-    def learn(self):
+    def learn(self, is_rf: bool = False):
+        """Learn all commands for the climate device"""
+        self.is_rf = is_rf
         print('\nYou will now be prompted to press the corresponding button on the remote for each command\n')
 
         # Learn the OFF Command

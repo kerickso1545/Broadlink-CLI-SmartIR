@@ -1,0 +1,652 @@
+2025-01-01 16:51:05,072 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 16:51:10,496 - __main__ - INFO - === Starting device scan ===
+2025-01-01 16:51:10,497 - __main__ - INFO - Manual device type specified: None
+2025-01-01 16:51:10,791 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 16:51:10,791 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 16:51:10,791 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 16:51:10,792 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 16:51:10,792 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 16:51:10,792 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 16:51:10,792 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 16:51:21,462 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 16:51:38,112 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 16:51:38,112 - helpers - INFO - Re-authenticating device
+2025-01-01 16:51:38,150 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 16:51:38,151 - helpers - INFO - Note: This only affects the temporary learning buffer, not stored commands
+2025-01-01 16:51:39,202 - helpers - INFO - === Starting RF listening mode ===
+2025-01-01 16:51:39,203 - helpers - INFO - Starting frequency sweep (temporary buffer will be used to detect frequency)
+2025-01-01 16:51:39,363 - helpers - INFO - Successfully started RF sweep
+2025-01-01 16:51:40,482 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 16:51:40,482 - helpers - INFO - Note: A temporary buffer will be used to capture the RF signal
+2025-01-01 16:51:40,555 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 16:51:40,555 - helpers - INFO - Listening for RF packet - press the remote button
+2025-01-01 16:51:40,556 - helpers - INFO - Starting listen loop at 1735771900.5569
+2025-01-01 16:51:40,556 - helpers - DEBUG - Checking temporary learning buffer at 0.0s
+2025-01-01 16:51:40,721 - helpers - INFO - Temporary learning buffer is full (count: 1)
+2025-01-01 16:51:41,624 - helpers - DEBUG - Checking temporary learning buffer at 1.1s
+2025-01-01 16:51:41,799 - helpers - INFO - Temporary learning buffer is full (count: 2)
+2025-01-01 16:51:42,704 - helpers - DEBUG - Checking temporary learning buffer at 2.1s
+2025-01-01 16:51:42,868 - helpers - INFO - Temporary learning buffer is full (count: 3)
+2025-01-01 16:51:42,869 - helpers - INFO - Temporary buffer has filled up 3 times, restarting RF learning
+2025-01-01 16:51:42,869 - helpers - INFO - Note: This only resets the learning buffer, not stored commands
+2025-01-01 16:51:43,802 - helpers - DEBUG - Checking temporary learning buffer at 3.2s
+2025-01-01 16:51:43,966 - helpers - INFO - Temporary learning buffer is full (count: 1)
+2025-01-01 16:51:44,871 - helpers - DEBUG - Checking temporary learning buffer at 4.3s
+2025-01-01 16:51:45,037 - helpers - INFO - Temporary learning buffer is full (count: 2)
+2025-01-01 16:51:45,941 - helpers - DEBUG - Checking temporary learning buffer at 5.4s
+2025-01-01 16:55:38,644 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 16:55:43,452 - __main__ - INFO - === Starting device scan ===
+2025-01-01 16:55:43,452 - __main__ - INFO - Manual device type specified: None
+2025-01-01 16:55:43,569 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 16:55:43,569 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 16:55:43,569 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 16:55:43,569 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 16:55:43,569 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 16:55:43,570 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 16:55:43,570 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 16:55:54,511 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 16:56:05,209 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 16:56:05,209 - helpers - INFO - Re-authenticating device
+2025-01-01 16:56:05,247 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 16:56:07,294 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 16:56:07,295 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 16:56:07,330 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 16:56:07,491 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 16:56:07,492 - helpers - INFO - Listening for RF packet at 1735772167.4929736
+2025-01-01 16:56:07,493 - helpers - DEBUG - Checking for data at 0.0s
+2025-01-01 16:56:07,615 - helpers - DEBUG - Error checking data at 0.0s: [Errno -5] The device storage is full
+2025-01-01 16:56:08,519 - helpers - DEBUG - Checking for data at 1.0s
+2025-01-01 16:56:08,648 - helpers - DEBUG - Error checking data at 1.0s: [Errno -5] The device storage is full
+2025-01-01 16:56:09,553 - helpers - DEBUG - Checking for data at 2.1s
+2025-01-01 16:56:09,695 - helpers - DEBUG - Error checking data at 2.1s: [Errno -5] The device storage is full
+2025-01-01 16:56:10,601 - helpers - DEBUG - Checking for data at 3.1s
+2025-01-01 16:56:10,721 - helpers - DEBUG - Error checking data at 3.1s: [Errno -5] The device storage is full
+2025-01-01 16:56:11,624 - helpers - DEBUG - Checking for data at 4.1s
+2025-01-01 16:56:11,785 - helpers - INFO - Successfully received RF data at 4.1s
+2025-01-01 16:56:23,935 - __main__ - DEBUG - {
+    "manufacturer": "Sofucor",
+    "supportedModels": [
+        "Fan"
+    ],
+    "supportedController": "Broadlink",
+    "commandsEncoding": "Base64",
+    "speed": [],
+    "commands": {
+        "forward": {},
+        "reverse": {},
+        "off": "b1c08402e29e06001908190809171908091719080918180818091809081808190818180918081809081907190819170918091809081917090818081a081818090818180908000105091709181809180809181808091818090818190818081809081908180819180917091808091808190818180918081809081918090818091809181808091818080900010509180818180918080918180809181809081818091808180909180818091818091808180908180918091719081809180908181809081809190818180908181809080001050918081819081809081818090818180909181808180918090818081908181809180917090819081809181809180818090819180809180819081918080819180809000105081809181808180909181808091818090818180918081809091808180917190819081809081808190818180918081809091818090818091809181809081818090800010509170918180918090818180809181809370a380a271820041707400414090f091404070e17041107041407120f091d0b0e120f090904040a060d040411070a0e07051a060a1207110f090711071107110f09071107110f09071228191f041707200417071f0417060b0d270617042e04071010090f09070917091f04160a0d110f091305070c18051f051b060a112e04071008110f090f041708090f2109272020211f2020200e0b16040f0817042604050407111f040807070b17070f090704170917062b05070e12090d0b07071908170435130810070408070f0417072e040a0a2a04090a281a360b360b08110f090f090f090f090f0907110f090711071107110f090711071107110f090f0907110f09071107110f09071107110f090711071107110f09071107110f09070005dc"
+    }
+}
+2025-01-01 18:43:44,066 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 18:44:57,529 - __main__ - INFO - === Starting device scan ===
+2025-01-01 18:44:57,529 - __main__ - INFO - Manual device type specified: None
+2025-01-01 18:44:57,872 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 18:44:57,874 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 18:44:57,874 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 18:44:57,874 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 18:44:57,874 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 18:44:57,874 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 18:44:57,874 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 18:45:10,192 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 18:45:28,221 - __main__ - INFO - === Starting Fan Command Learning ===
+2025-01-01 18:45:28,221 - __main__ - INFO - Speed Modes: ['level1', 'level2', 'level3', 'level4', 'level5', 'level6']
+2025-01-01 18:45:28,222 - __main__ - INFO - Timer Modes: []
+2025-01-01 18:45:28,222 - __main__ - INFO - Total commands to learn: 9
+2025-01-01 18:45:28,222 - __main__ - INFO - Learning OFF command (1/9)
+2025-01-01 18:45:28,222 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:45:28,222 - helpers - INFO - Re-authenticating device
+2025-01-01 18:45:28,261 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:45:30,313 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:45:30,314 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:45:30,351 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:45:30,520 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:45:30,521 - helpers - INFO - Listening for RF packet at 1735778730.521639
+2025-01-01 18:45:30,522 - helpers - DEBUG - Checking for data at 0.0s
+2025-01-01 18:45:30,651 - helpers - DEBUG - Error checking data at 0.0s: [Errno -5] The device storage is full
+2025-01-01 18:45:31,555 - helpers - DEBUG - Checking for data at 1.0s
+2025-01-01 18:45:31,680 - helpers - DEBUG - Error checking data at 1.0s: [Errno -5] The device storage is full
+2025-01-01 18:45:32,586 - helpers - DEBUG - Checking for data at 2.1s
+2025-01-01 18:45:32,700 - helpers - DEBUG - Error checking data at 2.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:33,605 - helpers - DEBUG - Checking for data at 3.1s
+2025-01-01 18:45:33,721 - helpers - DEBUG - Error checking data at 3.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:34,625 - helpers - DEBUG - Checking for data at 4.1s
+2025-01-01 18:45:34,775 - helpers - INFO - Successfully received RF data at 4.1s
+2025-01-01 18:45:41,320 - __main__ - INFO - Learning ON command (2/9)
+2025-01-01 18:45:41,321 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:45:41,322 - helpers - INFO - Re-authenticating device
+2025-01-01 18:45:41,353 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:45:43,403 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:45:43,403 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:45:43,441 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:45:43,606 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:45:43,607 - helpers - INFO - Listening for RF packet at 1735778743.6073399
+2025-01-01 18:45:43,607 - helpers - DEBUG - Checking for data at 0.0s
+2025-01-01 18:45:43,734 - helpers - DEBUG - Error checking data at 0.0s: [Errno -5] The device storage is full
+2025-01-01 18:45:44,638 - helpers - DEBUG - Checking for data at 1.0s
+2025-01-01 18:45:44,759 - helpers - DEBUG - Error checking data at 1.0s: [Errno -5] The device storage is full
+2025-01-01 18:45:45,662 - helpers - DEBUG - Checking for data at 2.1s
+2025-01-01 18:45:45,785 - helpers - DEBUG - Error checking data at 2.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:46,687 - helpers - DEBUG - Checking for data at 3.1s
+2025-01-01 18:45:46,806 - helpers - DEBUG - Error checking data at 3.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:47,709 - helpers - DEBUG - Checking for data at 4.1s
+2025-01-01 18:45:47,828 - helpers - DEBUG - Error checking data at 4.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:48,732 - helpers - DEBUG - Checking for data at 5.1s
+2025-01-01 18:45:48,854 - helpers - DEBUG - Error checking data at 5.1s: [Errno -5] The device storage is full
+2025-01-01 18:45:49,758 - helpers - DEBUG - Checking for data at 6.2s
+2025-01-01 18:45:49,880 - helpers - DEBUG - Error checking data at 6.2s: [Errno -5] The device storage is full
+2025-01-01 18:45:50,783 - helpers - DEBUG - Checking for data at 7.2s
+2025-01-01 18:45:50,934 - helpers - INFO - Successfully received RF data at 7.2s
+2025-01-01 18:49:14,049 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 18:49:50,120 - __main__ - INFO - === Starting device scan ===
+2025-01-01 18:49:50,121 - __main__ - INFO - Manual device type specified: None
+2025-01-01 18:49:50,359 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 18:49:50,359 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 18:49:50,359 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 18:49:50,360 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 18:49:50,360 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 18:49:50,360 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 18:49:50,360 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 18:50:01,709 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 18:50:32,773 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:50:32,775 - helpers - INFO - Re-authenticating device
+2025-01-01 18:50:32,808 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:50:34,856 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:50:34,857 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:50:34,891 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:50:35,062 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:50:35,062 - helpers - INFO - Listening for RF packet at 1735779035.062012
+2025-01-01 18:50:35,063 - helpers - DEBUG - Checking for data at 0.0s
+2025-01-01 18:50:35,178 - helpers - DEBUG - Error checking data at 0.0s: [Errno -5] The device storage is full
+2025-01-01 18:50:36,083 - helpers - DEBUG - Checking for data at 1.0s
+2025-01-01 18:50:36,209 - helpers - DEBUG - Error checking data at 1.0s: [Errno -5] The device storage is full
+2025-01-01 18:50:37,115 - helpers - DEBUG - Checking for data at 2.1s
+2025-01-01 18:50:37,235 - helpers - DEBUG - Error checking data at 2.1s: [Errno -5] The device storage is full
+2025-01-01 18:50:38,138 - helpers - DEBUG - Checking for data at 3.1s
+2025-01-01 18:50:38,249 - helpers - DEBUG - Error checking data at 3.1s: [Errno -5] The device storage is full
+2025-01-01 18:51:43,549 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 18:51:49,622 - __main__ - INFO - === Starting device scan ===
+2025-01-01 18:51:49,622 - __main__ - INFO - Manual device type specified: None
+2025-01-01 18:51:49,779 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 18:51:49,779 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 18:51:49,779 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 18:51:49,779 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 18:51:49,779 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 18:51:49,780 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 18:51:49,780 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 18:52:00,832 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 18:52:13,484 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:52:13,484 - helpers - INFO - Re-authenticating device
+2025-01-01 18:52:13,521 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:52:15,571 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:52:15,571 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:52:15,609 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:52:15,779 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:52:21,086 - helpers - INFO - Successfully received RF data
+2025-01-01 18:53:08,282 - __main__ - INFO - Successfully learned OFF command
+2025-01-01 18:53:08,284 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:08,284 - helpers - INFO - Re-authenticating device
+2025-01-01 18:53:08,321 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:53:10,372 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:10,372 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:53:10,419 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:53:10,590 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:53:24,019 - helpers - INFO - Successfully received RF data
+2025-01-01 18:53:27,894 - __main__ - INFO - Successfully learned ON command
+2025-01-01 18:53:27,894 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:27,895 - helpers - INFO - Re-authenticating device
+2025-01-01 18:53:27,928 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:53:29,975 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:29,975 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:53:30,013 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:53:30,181 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:53:33,398 - helpers - INFO - Successfully received RF data
+2025-01-01 18:53:35,874 - __main__ - INFO - Successfully learned REVERSE command
+2025-01-01 18:53:35,875 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:35,875 - helpers - INFO - Re-authenticating device
+2025-01-01 18:53:35,910 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:53:37,960 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:37,960 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:53:37,996 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:53:38,174 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:53:45,511 - helpers - INFO - Successfully received RF data
+2025-01-01 18:53:47,404 - __main__ - INFO - Successfully learned level1 command
+2025-01-01 18:53:47,404 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:47,405 - helpers - INFO - Re-authenticating device
+2025-01-01 18:53:47,440 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:53:49,492 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:49,492 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:53:49,529 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:53:49,695 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:53:52,930 - helpers - INFO - Successfully received RF data
+2025-01-01 18:53:56,738 - __main__ - INFO - Successfully learned level2 command
+2025-01-01 18:53:56,739 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:56,739 - helpers - INFO - Re-authenticating device
+2025-01-01 18:53:56,776 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:53:58,827 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:53:58,827 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:53:58,866 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:53:59,036 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:54:00,217 - helpers - INFO - Successfully received RF data
+2025-01-01 18:55:21,504 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 18:55:26,453 - __main__ - INFO - === Starting device scan ===
+2025-01-01 18:55:26,455 - __main__ - INFO - Manual device type specified: None
+2025-01-01 18:55:26,583 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 18:55:26,584 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 18:55:26,584 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 18:55:26,584 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 18:55:26,584 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 18:55:26,584 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 18:55:26,585 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 18:55:38,274 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 18:55:58,728 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:55:58,728 - helpers - INFO - Re-authenticating device
+2025-01-01 18:55:58,764 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:00,816 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:00,817 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:00,858 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:01,018 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:03,236 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:13,924 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:13,924 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:13,959 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:16,011 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:16,012 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:16,051 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:16,220 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:17,406 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:23,081 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:23,082 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:23,118 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:25,170 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:25,171 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:25,219 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:25,381 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:29,684 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:33,752 - __main__ - INFO - Successfully learned OFF command
+2025-01-01 18:56:33,753 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:33,753 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:33,789 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:35,843 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:35,844 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:35,885 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:36,045 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:39,308 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:41,926 - __main__ - INFO - Successfully learned ON command
+2025-01-01 18:56:41,926 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:41,927 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:41,963 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:44,013 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:44,013 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:44,053 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:44,212 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:48,497 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:50,052 - __main__ - INFO - Successfully learned REVERSE command
+2025-01-01 18:56:50,052 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:50,053 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:50,094 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:56:52,144 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:52,144 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:56:52,180 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:56:52,346 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:56:55,586 - helpers - INFO - Successfully received RF data
+2025-01-01 18:56:58,199 - __main__ - INFO - Successfully learned level1 command
+2025-01-01 18:56:58,200 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:56:58,200 - helpers - INFO - Re-authenticating device
+2025-01-01 18:56:58,232 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:00,284 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:00,284 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:00,319 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:00,484 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:02,686 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:04,381 - __main__ - INFO - Successfully learned level2 command
+2025-01-01 18:57:04,382 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:04,382 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:04,415 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:06,462 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:06,462 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:06,504 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:06,681 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:08,866 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:10,392 - __main__ - INFO - Successfully learned level3 command
+2025-01-01 18:57:10,392 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:10,392 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:10,426 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:12,471 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:12,471 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:12,508 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:12,676 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:14,885 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:16,287 - __main__ - INFO - Successfully learned level4 command
+2025-01-01 18:57:16,287 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:16,287 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:16,325 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:18,375 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:18,375 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:18,410 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:18,575 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:24,885 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:26,263 - __main__ - INFO - Successfully learned level5 command
+2025-01-01 18:57:26,263 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:26,263 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:26,301 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:28,354 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:28,355 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:28,396 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:28,559 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:30,766 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:33,075 - __main__ - INFO - Successfully learned level6 command
+2025-01-01 18:57:33,076 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:33,076 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:33,113 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:35,162 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:35,162 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:35,200 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:35,360 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:36,537 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:38,358 - __main__ - INFO - Successfully learned 2 HOUR TIMER command
+2025-01-01 18:57:38,359 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:38,359 - helpers - INFO - Re-authenticating device
+2025-01-01 18:57:38,395 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:57:40,445 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:57:40,445 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:57:40,486 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:57:40,653 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:57:42,874 - helpers - INFO - Successfully received RF data
+2025-01-01 18:57:44,439 - __main__ - INFO - Successfully learned 4 HOUR TIMER command
+2025-01-01 18:58:42,448 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 18:58:50,195 - __main__ - INFO - === Starting device scan ===
+2025-01-01 18:58:50,195 - __main__ - INFO - Manual device type specified: None
+2025-01-01 18:58:50,279 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 18:58:50,279 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 18:58:50,281 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 18:58:50,281 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 18:58:50,281 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 18:58:50,282 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 18:58:50,282 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 18:59:01,626 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 18:59:20,853 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:20,854 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:20,890 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:59:22,940 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:22,940 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:59:22,980 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:59:23,147 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:59:30,515 - helpers - INFO - Successfully received RF data
+2025-01-01 18:59:32,608 - __main__ - INFO - Successfully learned OFF command
+2025-01-01 18:59:32,608 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:32,608 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:32,650 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:59:34,700 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:34,701 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:59:34,737 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:59:34,907 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:59:38,146 - helpers - INFO - Successfully received RF data
+2025-01-01 18:59:39,993 - __main__ - INFO - Successfully learned ON command
+2025-01-01 18:59:39,994 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:39,994 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:40,027 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:59:42,073 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:42,073 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:59:42,105 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:59:42,264 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:59:44,464 - helpers - INFO - Successfully received RF data
+2025-01-01 18:59:46,190 - __main__ - INFO - Successfully learned REVERSE command
+2025-01-01 18:59:46,191 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:46,191 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:46,231 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:59:48,302 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:48,304 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:59:48,340 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:59:48,502 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:59:51,746 - helpers - INFO - Successfully received RF data
+2025-01-01 18:59:53,674 - __main__ - INFO - Successfully learned level1 command
+2025-01-01 18:59:53,675 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:53,675 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:53,712 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 18:59:55,762 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:55,764 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 18:59:55,814 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 18:59:55,984 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 18:59:58,184 - helpers - INFO - Successfully received RF data
+2025-01-01 18:59:59,807 - __main__ - INFO - Successfully learned level2 command
+2025-01-01 18:59:59,808 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 18:59:59,808 - helpers - INFO - Re-authenticating device
+2025-01-01 18:59:59,843 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:01,889 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:01,889 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:01,925 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:02,094 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:04,319 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:06,120 - __main__ - INFO - Successfully learned level3 command
+2025-01-01 19:00:06,121 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:06,121 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:06,156 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:08,206 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:08,206 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:08,242 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:08,405 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:11,630 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:13,061 - __main__ - INFO - Successfully learned level4 command
+2025-01-01 19:00:13,061 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:13,062 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:13,103 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:15,152 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:15,153 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:15,188 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:15,359 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:18,587 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:19,973 - __main__ - INFO - Successfully learned level5 command
+2025-01-01 19:00:19,974 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:19,974 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:20,010 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:22,062 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:22,063 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:22,102 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:22,275 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:24,495 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:28,678 - __main__ - INFO - Successfully learned level6 command
+2025-01-01 19:00:28,678 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:28,678 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:28,711 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:30,757 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:30,757 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:30,793 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:30,950 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:32,138 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:34,831 - __main__ - INFO - Successfully learned 1 HOUR TIMER command
+2025-01-01 19:00:34,831 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:34,831 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:34,868 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:36,918 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:36,919 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:36,957 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:37,123 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:42,416 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:42,419 - __main__ - INFO - Successfully learned 4 HOUR TIMER command
+2025-01-01 19:00:42,421 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:42,422 - helpers - INFO - Re-authenticating device
+2025-01-01 19:00:42,459 - helpers - INFO - Canceling any previous RF learning state
+2025-01-01 19:00:44,511 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:00:44,511 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:00:44,549 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:00:44,724 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:00:46,937 - helpers - INFO - Successfully received RF data
+2025-01-01 19:00:49,109 - __main__ - INFO - Successfully learned 8 HOUR TIMER command
+2025-01-01 19:04:06,502 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:04:12,912 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:04:12,913 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:04:12,980 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:04:12,981 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:04:12,981 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:04:12,981 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:04:12,981 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:04:12,981 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:04:12,982 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:07:40,947 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:07:47,786 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:07:47,787 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:07:47,939 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:07:47,939 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:07:47,939 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:07:47,941 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:07:47,941 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:07:47,941 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:07:47,941 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:28:10,072 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:28:18,981 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:28:18,982 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:28:19,294 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:28:19,294 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:28:19,294 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:28:19,296 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:28:19,296 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:28:19,296 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:28:19,296 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:28:33,658 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:28:42,331 - helpers - INFO - === Starting IR learning mode ===
+2025-01-01 19:28:42,331 - helpers - INFO - Re-authenticating device
+2025-01-01 19:34:36,506 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:34:43,449 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:34:43,449 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:34:43,529 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:34:43,529 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:34:43,529 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:34:43,529 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:34:43,530 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:34:43,530 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:34:43,530 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:37:11,039 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:37:27,248 - helpers - INFO - === Starting IR learning mode ===
+2025-01-01 19:38:27,393 - __main__ - ERROR - Error during learning: No data received within timeout period
+2025-01-01 19:41:36,105 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:41:42,505 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:41:42,505 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:41:42,779 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:41:42,781 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:41:42,781 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:41:42,781 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:41:42,781 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:41:42,781 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:41:42,781 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:41:55,577 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:42:03,827 - helpers - INFO - === Starting IR learning mode ===
+2025-01-01 19:42:20,966 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:42:27,623 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:42:27,624 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:42:27,858 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:42:27,858 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:42:27,858 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:42:27,859 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:42:27,859 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:42:27,859 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:42:27,859 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:42:38,611 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:45:11,072 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:45:17,114 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:45:17,114 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:45:17,325 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:45:17,325 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:45:17,327 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:45:17,327 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:45:17,327 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:45:17,327 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:45:17,327 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:45:28,332 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:45:41,507 - helpers - INFO - Re-authenticating device
+2025-01-01 19:45:41,542 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:45:41,543 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:45:41,543 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:45:41,575 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:45:41,741 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:45:52,157 - helpers - INFO - Successfully received RF data
+2025-01-01 19:45:59,660 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:46:05,132 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:46:05,132 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:46:05,346 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:46:05,346 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:46:05,347 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:46:05,347 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:46:05,347 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:46:05,347 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:46:05,348 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:46:16,290 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:46:25,166 - helpers - INFO - Re-authenticating device
+2025-01-01 19:53:31,196 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:53:34,114 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:53:34,114 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:53:34,304 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:53:34,305 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:53:34,305 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:53:34,305 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:53:34,305 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:53:34,305 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:53:34,306 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:53:46,727 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-01-01 19:53:56,181 - __main__ - INFO - === Starting device scan ===
+2025-01-01 19:53:56,181 - __main__ - INFO - Manual device type specified: None
+2025-01-01 19:53:56,428 - __main__ - INFO - Found device via auto-discovery:
+2025-01-01 19:53:56,429 - __main__ - INFO -   - Type: rm4pro
+2025-01-01 19:53:56,429 - __main__ - INFO -   - Model: RM4 pro
+2025-01-01 19:53:56,430 - __main__ - INFO -   - Device Type (hex): 0x649b
+2025-01-01 19:53:56,430 - __main__ - INFO -   - Host: 192.168.1.110
+2025-01-01 19:53:56,430 - __main__ - INFO -   - MAC: a043b0543c0e
+2025-01-01 19:53:56,430 - __main__ - INFO -   - Available methods: ['TYPE', 'aes', 'auth', 'cancel_sweep_frequency', 'check_data', 'check_frequency', 'check_humidity', 'check_sensors', 'check_temperature', 'count', 'decrypt', 'devtype', 'encrypt', 'enter_learning', 'find_rf_packet', 'get_fwversion', 'get_type', 'hello', 'host', 'id', 'is_locked', 'iv', 'lock', 'mac', 'manufacturer', 'model', 'name', 'ping', 'send_data', 'send_packet', 'set_lock', 'set_name', 'sweep_frequency', 'timeout', 'type', 'update', 'update_aes']
+2025-01-01 19:54:18,591 - __main__ - INFO - Stored frequency 433.89 MHz on selected device
+2025-01-01 19:54:28,074 - helpers - INFO - Re-authenticating device
+2025-01-01 19:54:28,107 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:54:28,107 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:54:28,107 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:54:28,138 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:54:28,308 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:54:34,540 - helpers - INFO - Successfully received RF data
+2025-01-01 19:54:37,930 - helpers - INFO - Re-authenticating device
+2025-01-01 19:54:37,966 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:54:37,966 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:54:37,967 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:54:38,001 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:54:38,162 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:54:42,433 - helpers - INFO - Successfully received RF data
+2025-01-01 19:54:44,912 - helpers - INFO - Re-authenticating device
+2025-01-01 19:54:44,948 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:54:44,948 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:54:44,949 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:54:44,980 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:54:45,153 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:54:48,805 - helpers - INFO - Successfully received RF data
+2025-01-01 19:54:50,969 - helpers - INFO - Re-authenticating device
+2025-01-01 19:54:51,003 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:54:51,003 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:54:51,004 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:54:51,038 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:54:51,207 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:54:53,645 - helpers - INFO - Successfully received RF data
+2025-01-01 19:54:55,336 - helpers - INFO - Re-authenticating device
+2025-01-01 19:54:55,368 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:54:55,368 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:54:55,368 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:54:55,406 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:54:55,562 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:54:57,628 - helpers - INFO - Successfully received RF data
+2025-01-01 19:55:04,643 - helpers - INFO - Re-authenticating device
+2025-01-01 19:55:04,679 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:55:04,679 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:55:04,680 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:55:04,710 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:55:04,880 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:55:08,005 - helpers - INFO - Successfully received RF data
+2025-01-01 19:55:11,089 - helpers - INFO - Re-authenticating device
+2025-01-01 19:55:11,139 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:55:11,139 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:55:11,140 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:55:11,174 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:55:11,353 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:55:14,980 - helpers - INFO - Successfully received RF data
+2025-01-01 19:55:16,646 - helpers - INFO - Re-authenticating device
+2025-01-01 19:55:16,681 - helpers - ERROR - Error canceling previous state: 'rm4pro' object has no attribute 'cancel_rf_sweep'
+2025-01-01 19:55:16,681 - helpers - INFO - === Starting RF learning mode ===
+2025-01-01 19:55:16,681 - helpers - INFO - Press the button on your remote (short press)...
+2025-01-01 19:55:16,719 - helpers - INFO - Starting RF learning with frequency: 433.89 MHz
+2025-01-01 19:55:16,880 - helpers - INFO - Successfully started RF learning mode
+2025-01-01 19:55:19,575 - helpers - INFO - Successfully received RF data
+2025-01-01 19:55:21,195 - __main__ - INFO - Finished - Config saved to ./out directory
+

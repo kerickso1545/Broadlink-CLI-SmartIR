@@ -1,4 +1,3 @@
-
 from enum import Enum
 import json
 import broadlink
@@ -24,6 +23,7 @@ class MediaDevice:
         self.sources = self._promptMediaSources()
         self.logger = logger
         self.outputConfig = self._buildBaseOutputConfig(manufacturer, supportedModels)
+        self.is_rf = False
 
     def _promptMediaSources(self):
         mediaSources = questionary.text('Enter Media Source names (comma separated)').ask()
@@ -54,35 +54,42 @@ class MediaDevice:
 
         return outputConfig
 
-    def _learnCommand(self, key: str, nestedKey: str):
-        if key and nestedKey:
-            print(f'Learning {key.upper()} {nestedKey.upper()} - Point the remote to the device and press the button')
-        elif key:
-            print(f'Learning {key.upper()} - Point the remote to the device and press the button')
+    def _learnCommand(self, command_type: str):
+        """Learn a command from the remote"""
+        print(f'\nLearning {command_type.upper()} - Point remote at device and press button')
 
-        command = async_learn(self.device)
+        # Get the current frequency if it was set during device initialization
+        frequency = None
+        if hasattr(self.device, 'frequency'):
+            frequency = self.device.frequency
 
-        choice = input(f'Press Enter or Y to confirm or N to re-learn Command - {command}\n')
+        command = async_learn(self.device, is_rf=self.is_rf, frequency=frequency)
+        if command is None:
+            return False
+
+        choice = input(f'Press Enter or Y to confirm or N to relearn - {command}\n')
 
         if choice.lower() == 'y' or choice == '':
-            return self._writeCommandToConfig(command, key, nestedKey)
+            return self._writeCommandToConfig(command, command_type)
         else:
-            return self._learnCommand(key, nestedKey)
+            return self._learnCommand(command_type)
 
-    def _writeCommandToConfig(self, command: str, key: str, nestedKey: str):
+    def _writeCommandToConfig(self, command: str, key: str, nestedKey: str = None):
         if key and nestedKey:
             self.outputConfig['commands'][key][nestedKey] = command
         elif key:
             self.outputConfig['commands'][key] = command
 
-    def learn(self):
+    def learn(self, is_rf: bool = False):
+        """Learn all commands for the media device"""
+        self.is_rf = is_rf
         # Learn the media commands
         for command in MediaCommands:
-            self._learnCommand(command.value, None)
+            self._learnCommand(command.value)
 
         # Learn the sources
         for source in self.sources:
-            self._learnCommand('sources', source)
+            self._learnCommand('sources')
             self.logger.debug(json.dumps(self.outputConfig, indent=4))
 
         return self.outputConfig
